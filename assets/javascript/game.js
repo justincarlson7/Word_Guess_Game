@@ -8,7 +8,7 @@ var currentWord = wordOptions[Math.floor(Math.random() * wordOptions.length)];
 console.log("This is the current word " + currentWord);
 
 var currentWordArray = [];
-var blanksArray = ["_ ", "_ ", "_ ", "_ ", "_ ", "_ "];
+var blanksArray = [];
 
 document.onkeyup = function(event) {
   var playerGuess = event.keyCode;
@@ -30,22 +30,17 @@ function letters(currentWordArray, playerGuess) {
   
 
   for (var i = 0; i < currentWordArray.length; i++) {
-   var answerField = blanksArray.push(blanks_);
-   console.log("These are blanks " + answerField)
+  
+  blanksArray.push("_ ");
+   
     
   }
-m
-  //console.log("this is var blanks" + blanks_)
 
-  // loop for each number of index
-  // array.push.blanks_
-  //
+  //TODO: clear blanksArray before each attempt
 
+  console.log("These are blanks " + blanksArray);
 
-  function blanks() {
-
-
-  }
+ 
 
   console.log("spacesCount variable is " + spacesCount)
 
@@ -58,14 +53,24 @@ m
 
        console.log("this is the letter and the index " + playerGuess + indexLetter);
 
+      var blanksArrayfinal = blanksArray.splice(indexLetter, 0, playerGuess); 
 
+       console.log("This is answer " + blanksArrayfinal);
+
+    } else {
+
+      console.log("Pick a new letter!!!");
 
     }
+
     console.log(currentWordArray[i]);
-  }
+
+
+  
+  };
 
   //replace the underscore with the correct letter when player presses it
 
-  console.log("These are the letters " + currentWordArray[0]);
+  // console.log("These are the letters " + currentWordArray[0]);
   console.log("Look here " + playerGuess);
-}
+};
